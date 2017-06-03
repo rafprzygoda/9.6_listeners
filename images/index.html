@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<body>
+<h1>Manipulowanie DOM po kliknięciu</h1>
+    <ul id="list">
+        <li>element 0</li>
+    </ul>
+    <button id="addElem">Dodaj element listy</button>
+
+    <script type="text/javascript">
+        var add = document.getElementById("addElem"); 
+        var list = document.getElementById("list"); 
+        add.addEventListener('click', function() {
+            var element = document.createElement('li'); 
+            element.innerHTML = "element nr" + " " + list.getElementsByTagName("li").length*2; // Yes, multiple by 2 because why not? :)
+            list.appendChild(element);
+        });
+    </script>
+</body>
+</html>
